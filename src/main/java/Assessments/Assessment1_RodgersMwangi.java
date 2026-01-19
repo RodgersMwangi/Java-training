@@ -20,10 +20,5 @@ public class Assessment1_RodgersMwangi {
         System.out.println("Expression Result: "+ expression);
         System.out.println("Remainder: " + remainder);
 
-
     }
-   
-
-    
-
 }
