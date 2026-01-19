@@ -8,11 +8,15 @@ public class App
 {
     public static void main( String[] args )
     {
-        int balance=8000;
-        //withdraw 5400
-        balance-=5400;
-        double newvalue=(double)balance/3;
-        System.out.println(newvalue);
-        System.out.println( "Your balance is " + balance );
+        int[] numbers = {10,21,65,35,85,37,53,99};
+        int searchFor=37;
+        for(int counter=0; counter<=numbers.length; counter++){
+            System.out.println("Searching...");
+            if(numbers[counter]==37){
+                System.out.println("Found number 37");
+                break;
+            }
+        }
+        
     }
 }
