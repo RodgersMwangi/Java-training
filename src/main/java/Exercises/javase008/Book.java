@@ -76,6 +76,16 @@ public class Book {
         isAvailable=true;
         System.out.println("You have returned "+ title + " \nIsbn: "+isbn);
     }
+
+    //check if book is overdue
+    public boolean isOverDue(){
+        LocalDate today=LocalDate.now();
+        if(today.isAfter(dueDate)){
+            return true;
+        }else{
+            return false;
+        }
+    }
     public void displayInfo(){
         if(!error){
             System.out.println();

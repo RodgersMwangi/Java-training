@@ -8,13 +8,15 @@ public class Main {
         //temperature.converter();
 
         Book book=new Book("1234567890123", "Now or Never", "Jane Doe", true, LocalDate.of(2026,5,23));
-        Book book2=new Book("1234567854423", "New World", "John Doe", true, LocalDate.of(2026,3,23));
+        Book book2=new Book("1234567854423", "New World", "John Doe", true, LocalDate.of(2026,1,13));
         book2.displayInfo();
         book2.borrowBook();
         book2.displayInfo();
         book2.borrowBook();
         book2.returnBook();
         book2.displayInfo();
+        System.out.println("Is Overdue: "+ book2.isOverDue());
+        
 
     }
 
