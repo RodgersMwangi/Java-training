@@ -1,3 +1,14 @@
+/*
+Assessment 3: Javase014
+Student: Rodgers Mwangi
+Date: 1 Feb 2026
+Problem 4
+
+Key features
+    corrected class EmployeeManagement
+*/
+
+
 package Assignment.javase014.Problem4;
 
 public class EmployeeManagement {

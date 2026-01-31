@@ -1,3 +1,15 @@
+/*
+Assessment 3: Javase014
+Student: Rodgers Mwangi
+Date: 1 Feb 2026
+Problem 1
+
+Key features
+    inheritance, method overriding, error handling
+    polymorphism
+    encapsulation
+*/
+
 package Assignment.javase014.Problem1;
 
 public class LibraryTest {
