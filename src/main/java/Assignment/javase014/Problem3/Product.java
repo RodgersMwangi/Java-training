@@ -80,6 +80,7 @@ public abstract class Product {
         double taxedPrice=price;
         taxedPrice*=0.2;
         price=price+taxedPrice;
+        System.out.println("Price after tax: "+price);
 
     }
 

@@ -48,7 +48,7 @@ public class Book extends LibraryItem{
     @Override
     public void checkout(){
         if(isAvailable() && !error){
-            System.out.println("You have borrowed the book"+ this.getTitle());
+            System.out.println("You have borrowed the book "+ this.getTitle());
             setAvailable(false);
         }else if(error){
             System.out.println("Insufficient details provided about this Book");
