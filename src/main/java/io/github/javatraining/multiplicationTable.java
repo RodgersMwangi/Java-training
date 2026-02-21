@@ -2,7 +2,7 @@ package io.github.javatraining;
 
 import java.util.Scanner;
 
-public class loops {
+public class multiplicationTable {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a number");

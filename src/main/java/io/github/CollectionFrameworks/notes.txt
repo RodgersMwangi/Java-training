@@ -1,0 +1,15 @@
+Set - collection with no duplicates
+
+-at most one null element
+-no positional element(no index)
+
+Implementations
+ - HashSet ->Hashtable implementations, no ordering
+ - LinkedHashSet ->hashtable + linked list, insertion ordering
+ - TreeSet - Red-black tree, sorted order
+
+ Map - Objects that maps keys to values, cannot contain duplicate keys
+ - HashMap -> no ordering  - .put, .get, .remove, .putIfAbsent,.containsKey
+ - LinkedHashMap -> insertion order
+ - TreeMap -> sorted by key
+
