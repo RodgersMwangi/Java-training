@@ -1,0 +1,1 @@
+Shorthand for lambdas that call existing methods

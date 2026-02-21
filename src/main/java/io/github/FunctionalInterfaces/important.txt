@@ -1,0 +1,3 @@
+Functional interfaces have exactly one abstract method
+They may have multiple default and static methods
+annotated with @FunctionalInterface - optional but recommended

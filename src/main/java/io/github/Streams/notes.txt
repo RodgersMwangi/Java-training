@@ -1,0 +1,4 @@
+Sequence of elements supporting functional-style operations
+
+Source -> Intermediate Operations -> Terminal Operations
+        (filter, map, sorted)       (collect, forEach, reduce)
