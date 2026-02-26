@@ -1,6 +1,6 @@
 package io.github.javatraining;
-import io.github.*;
-import io.github.Inheritance.Shape;
+//import io.github.*;
+
 
 import java.util.Scanner;
 
