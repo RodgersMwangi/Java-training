@@ -20,3 +20,43 @@ names.stream()
      });
 
 Nothing prints because no terminal operation was called
+
+Intermediate Operations
+    Filtering Operations
+        filter() - returns value that match the predicate
+        distinct() - removes duplicates
+        limit() - truncate stream
+        skip() - skip the first n elements
+        takeWhile() - take elements while predicate is true
+        dropWhile() - drops elements while predicate is true
+    Mapping Operations - transform each element
+        map()
+        flatMap() - flatten nested structures
+        mapToInt(), mapToDouble(), mapToLong() - primitive transformations
+        boxed() - convert primitive stream to object stream, e.g from int to Integer
+    Sorting and Peeking -
+        sorted() - natural order
+        sorted(Comparator) - sort with custom order
+        peek(Consumer) - debug intermediate values, should not modify
+
+Terminal Operators - provide a result or side-effect and close the stream
+    Collection Operations-
+        groupingBy - collects elements into a Map<K, List<V>> based on a classification function.
+        partitioningBy - special case of groupingBy, splits elements into 2 groups only
+        joining - concatenates stream elements into a single String
+    Reduction Operations - combine elements to produce a single result
+        count
+        min
+        max
+        primitives
+            sum()
+            average()
+    Finding and matching operations
+        anyMatch() ->true if any element matches
+        allMatch() -> true if all elements matches
+        noneMatch() -> true if none of the elements matches
+        findFirst()
+        findAny() - get any element
+
+        distinct - elements that are unique
+
