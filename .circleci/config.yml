@@ -1,0 +1,17 @@
+version: 2.1
+#tells circleci which config syntax version to use
+#2.1 enables modern features
+
+jobs: #series of steps ran on the same environment
+  build: #build is the name of our first job.
+    docker: #tells circleci to spin up a docker image
+      - image: cimg/openjdk:17.0 #the official circle ci java 17 image
+    steps:
+      - checkout #pulls github repo into the container
+      - run: mvn clean install #clean to remove previous build artifacts, install to compile and run tests on the app
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
