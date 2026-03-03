@@ -9,6 +9,9 @@ jobs: #series of steps ran on the same environment
     steps:
       - checkout #pulls github repo into the container
       - run: mvn clean install #clean to remove previous build artifacts, install to compile and run tests on the app
+      - store_artifacts:
+          path: target/*.jar  # Save all .jar files from the 'target' directory as artifacts
+          destination: build-artifacts  # Optional: You can define a folder name for the artifacts
 
 workflows:
   version: 2
