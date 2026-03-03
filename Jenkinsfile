@@ -1,23 +1,53 @@
 pipeline {
     agent any
 
+    triggers {
+        githubPush()
+    }
+
+    environment {
+        BUILD_DIR = "built"
+        REPO_URL = "https://github.com/RodgersMwangi/Java-training.git"
+        BRANCH = "main"
+        PROJECT_DIR = "country-name"
+    }
+
     stages {
-        stage('Checkout') {
+
+        stage('Checkout Code') {
             steps {
-                checkout scm
+                git branch: "${BRANCH}",
+                    credentialsId: 'jenkins-github-creds',
+                    url: "${REPO_URL}"
             }
         }
 
-        stage('Build') {
+        stage('Build with Gradle') {
             steps {
-                sh 'mvn clean compile'
+                dir("${PROJECT_DIR}") {
+                    sh 'chmod +x gradlew'
+                    sh './gradlew clean build'
+                }
             }
         }
 
-        stage('Test') {
+        stage('Create built Directory') {
             steps {
-                sh 'mvn test'
+                sh '''
+                    mkdir -p ${BUILD_DIR}
+                    cp country-name/build/libs/*.jar ${BUILD_DIR}/
+                '''
             }
+        }
+    }
+
+    post {
+        success {
+            echo "Build successful. .jar stored in built/"
+            archiveArtifacts artifacts: 'built/*.jar', fingerprint: true
+        }
+        failure {
+            echo "Build failed"
         }
     }
 }
