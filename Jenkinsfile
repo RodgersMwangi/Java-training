@@ -9,7 +9,7 @@ pipeline {
         BUILD_DIR = "built"
         REPO_URL = "https://github.com/RodgersMwangi/Java-training.git"
         BRANCH = "main"
-        IMAGE_NAME = "rodgersmwangi/Bank-App"
+        IMAGE_NAME = "rodgersmwangi/demo-app"
         VERSION = "1.0.${BUILD_NUMBER}"
     }
 
