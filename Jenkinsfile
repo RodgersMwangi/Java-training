@@ -9,7 +9,6 @@ pipeline {
         BUILD_DIR = "built"
         REPO_URL = "https://github.com/RodgersMwangi/Java-training.git"
         BRANCH = "main"
-        PROJECT_DIR = "country-name"
     }
 
     stages {
@@ -23,18 +22,16 @@ pipeline {
         }
 
         stage('Build with Maven') {
-    steps {
-        dir("${PROJECT_DIR}") {
-            sh 'mvn clean install'
+            steps {
+                sh 'mvn clean package'
+            }
         }
-    }
-}
 
         stage('Create built Directory') {
             steps {
                 sh '''
                     mkdir -p ${BUILD_DIR}
-                    cp country-name/target/*.jar ${BUILD_DIR}/
+                    cp target/*.jar ${BUILD_DIR}/
                 '''
             }
         }
@@ -45,6 +42,7 @@ pipeline {
             echo "Build successful. .jar stored in built/"
             archiveArtifacts artifacts: 'built/*.jar', fingerprint: true
         }
+
         failure {
             echo "Build failed"
         }
